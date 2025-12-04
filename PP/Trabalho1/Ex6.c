@@ -1,6 +1,7 @@
 /*Leia um número positivo e imprima seus divisores (em sequência, cada um seguido de um espaço).*/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
 
@@ -15,5 +16,6 @@ int main(void) {
         }
 
     }
+    system("pause");
     return 0;
 }
