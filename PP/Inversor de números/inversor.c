@@ -8,10 +8,8 @@ int main() {
     int x, y;
 
     printf("Seja bem-vindo ao Inversor de Números!\n");
-    system("pause");
     printf("Escolha um número que satisfaça as seguintes condições:\n");
     printf("Número inteiro;\nPositivo;\nCom pelo menos dois dígitos.\n");
-    system("pause");
     printf("Digite o número escolhido:");
     scanf("%i", &x);
 
@@ -24,7 +22,6 @@ int main() {
     }
 
     printf("Agora vamos escrever seu número ao contrário!\n");
-    system("pause");
 
     while (x > 0) {
 
@@ -35,7 +32,6 @@ int main() {
     }
 
     printf("\n");
-    system("pause");
     return 0;
 
 }
