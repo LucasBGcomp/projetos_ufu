@@ -1,3 +1,7 @@
+/*Leia uma matriz 10 x 3 com as notas de 10 alunos em 3 provas. Crie um vetor que armazene a nota
+final de cada aluno, calculada a partir da média aritmética das notas das 3 provas. Imprima o vetor
+resultante. Além disso, calcule e imprima a média da turma.*/
+
 #include <stdio.h>
 
 int main()
@@ -58,4 +62,3 @@ int main()
 
     return 0;
 }
-

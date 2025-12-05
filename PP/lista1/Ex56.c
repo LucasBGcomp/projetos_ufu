@@ -1,3 +1,6 @@
+/*Leia duas matrizes, M1 e M2, de dimensões 3 x 3. Crie uma nova matriz M3, também de dimensão 3x3
+e a preencha com os maiores elementos de M1 e M2 na posição correspondente.*/
+
 #include <stdio.h>
 
 int main()
@@ -47,4 +50,3 @@ int main()
 
     return 0;
 }
-
