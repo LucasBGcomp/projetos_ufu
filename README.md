@@ -1,2 +1,3 @@
 # projetos_ufu
-Tudo o que eu fiz durante a minha graduação na UFU
+## Bacharelado em Ciência da Computação
+__Tudo o que eu fiz durante a minha graduação na UFU__
