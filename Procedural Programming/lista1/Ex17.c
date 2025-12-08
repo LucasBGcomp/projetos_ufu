@@ -6,11 +6,8 @@ direito.*/
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 int main() {
-
-    setlocale(LC_ALL, "pt_BR.UTF-8");
 
     float premio = 27000000.00;
     const float cont_a1 = 20.00;
@@ -18,19 +15,19 @@ int main() {
     const float cont_a3 = 5.00;
     const float total_aposta = cont_a1 + cont_a2 + cont_a3;
 
-    printf("Valor total do prêmio: R$%.2f\n", premio);
-    printf("Caso eles ganhem o prêmio, o valor será distribuído proporcionalmente à contribuição de cada amigo na aposta.\n");
-    printf("Contribuição do amigo 1: R$%.2f\n", cont_a1);
+    printf("Valor total do premio: R$%.2f\n", premio);
+    printf("Caso eles ganhem o premio, o valor sera distribuido proporcionalmente a contribuicao de cada amigo na aposta.\n");
+    printf("Contribuicao do amigo 1: R$%.2f\n", cont_a1);
     system("pause");
-    printf("Contribuição do amigo 2: R$%.2f\n", cont_a2);
+    printf("Contribuicao do amigo 2: R$%.2f\n", cont_a2);
     system("pause");
-    printf("Contribuição do amigo 3: R$%.2f\n", cont_a3);
+    printf("Contribuicao do amigo 3: R$%.2f\n", cont_a3);
     system("pause");
 
-    printf("\nDistribuição do prêmio:\n\n");
-    printf("Amigo 1 receberá: R$%.2f\n", (cont_a1 / total_aposta) * premio);
-    printf("Amigo 2 receberá: R$%.2f\n", (cont_a2 / total_aposta) * premio);
-    printf("Amigo 3 receberá: R$%.2f\n", (cont_a3 / total_aposta) * premio);
+    printf("\nDistribuicao do premio:\n\n");
+    printf("Amigo 1 recebera: R$%.2f\n", (cont_a1 / total_aposta) * premio);
+    printf("Amigo 2 recebera: R$%.2f\n", (cont_a2 / total_aposta) * premio);
+    printf("Amigo 3 recebera: R$%.2f\n", (cont_a3 / total_aposta) * premio);
 
     system("pause");
     return 0;

@@ -31,8 +31,10 @@ int main(){
                 j++;
                 continue;
             }else{
-                printf("A matriz nao e inca!");
+                printf("A matriz nao e inca!\n");
+                system("pause");
                 return 0;
+                
             }
         } else {
             if (i < 3){
@@ -40,8 +42,10 @@ int main(){
                     i++;
                     continue;
                 } else {
-                    printf("A matriz nao e inca!");
+                    printf("A matriz nao e inca!\n");
+                    system("pause");
                     return 0;
+                    
                 }
             } else {
                 if (j > 0){
@@ -49,8 +53,10 @@ int main(){
                         j--;
                         continue;
                     } else {
-                        printf("A matriz nao e inca!");
+                        printf("A matriz nao e inca!\n");
+                        system("pause");
                         return 0;
+                        
                     }
                 } else {
                     if (i > 1){
@@ -58,8 +64,10 @@ int main(){
                             i--;
                             continue;
                         } else {
-                            printf("A matriz nao e inca!");
+                            printf("A matriz nao e inca!\n");
+                            system("pause");
                             return 0;
+                            
                         }
                     } else {
                         if (j < 2){
@@ -67,8 +75,10 @@ int main(){
                                 j++;
                                 continue;
                             } else {
-                                printf("A matriz nao e inca!");
+                                printf("A matriz nao e inca!\n");
+                                system("pause");
                                 return 0;
+                                
                             }
                         } else {
                             if (i < 2){
@@ -76,16 +86,20 @@ int main(){
                                     i++;
                                     continue;
                                 } else {
-                                    printf("A matriz nao e inca!");
+                                    printf("A matriz nao e inca!\n");
+                                    system("pause");
                                     return 0;
+                                    
                                 }
                             } else {
                                 if (m1[i][j] == m1[i][j-1] - 1){
                                     j--;
                                     continue;
                                 } else {
-                                    printf("A matriz nao e inca!");
+                                    printf("A matriz nao e inca!\n");
+                                    system("pause");
                                     return 0;
+                                    
                                 }
                         }
                     }
@@ -96,7 +110,9 @@ int main(){
         
     }while (i != 3 && j != 2);
 
-    printf("A matriz e inca!");
+    printf("A matriz e inca!\n");
+
+    system("pause");
     return 0;
     
 }

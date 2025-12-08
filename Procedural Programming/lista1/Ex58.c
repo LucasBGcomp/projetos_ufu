@@ -3,13 +3,14 @@ final de cada aluno, calculada a partir da média aritmética das notas das 3 pr
 resultante. Além disso, calcule e imprima a média da turma.*/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
     int Nalunos, Nprovas;
-    printf("Digite o número de alunos da turma: ");
+    printf("Digite o numero de alunos da turma: ");
     scanf("%d", &Nalunos);
-    printf("Digite o número de provas realizadas: ");
+    printf("Digite o numero de provas realizadas: ");
     scanf("%d", &Nprovas);
     int mt[Nalunos][Nprovas];
     
@@ -42,10 +43,10 @@ int main()
     for (int i = 0; i < Nalunos; i++){
         
         if (nf[i] >= 7){
-            printf("A nota final do aluno %d é: %.1f\t (Aprovado!)\n\n", i+1, nf[i]);
+            printf("A nota final do aluno %d e: %.1f\t (Aprovado!)\n\n", i+1, nf[i]);
         }
         else{
-           printf("A nota final do aluno %d é: %.1f\t (Reprovado!)\n\n", i+1, nf[i]); 
+           printf("A nota final do aluno %d e: %.1f\t (Reprovado!)\n\n", i+1, nf[i]); 
         }
     }
     
@@ -58,7 +59,8 @@ int main()
         
     }
     
-    printf("A note média da turma é: %.2f", media);
+    printf("A note media da turma e: %.2f\n", media);
 
+    system("pause");
     return 0;
 }

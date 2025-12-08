@@ -2,18 +2,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 int main(void) {
 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
-
     float salario, prestacao;
 
-    printf("Digite o valor do salário do trabalhador (em reais): ");
+    printf("Digite o valor do salario do trabalhador (em reais): ");
     scanf("%f", &salario);
 
-    printf("Digite o valor da prestação do empréstimo (em reais): ");
+    printf("Digite o valor da prestacao do emprestimo (em reais): ");
     scanf("%f", &prestacao);
 
     if (prestacao > (0.3 * salario)) {

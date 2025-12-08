@@ -2,11 +2,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 int main(){
 
-setlocale(LC_ALL, "Portuguese");
 int segundos, horas, minutos, segs_restantes;
 
 printf("Digite um valor inteiro em segundos: ");
