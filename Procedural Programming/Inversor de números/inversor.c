@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <locale.h>
 
-int main() {
+int main()
+{
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
@@ -13,25 +14,24 @@ int main() {
     printf("Digite o número escolhido:");
     scanf("%i", &x);
 
-    while (x < 10 || x < 0 || x % 1 != 0) {
+    while (x < 10 || x < 0 || x % 1 != 0)
+    {
 
         printf("Número inválido. Por favor, escolha um número que satisfaça as condições mencionadas:\n");
         printf("Digite o número escolhido:");
         scanf("%i", &x);
-
     }
 
     printf("Agora vamos escrever seu número ao contrário!\n");
 
-    while (x > 0) {
+    while (x > 0)
+    {
 
         y = x % 10;
         printf("%i", y);
         x = x / 10;
-
     }
 
     printf("\n");
     return 0;
-
 }

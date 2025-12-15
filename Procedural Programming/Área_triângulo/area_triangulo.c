@@ -3,7 +3,8 @@
 #include <locale.h>
 #include <math.h>
 
-int main() {
+int main()
+{
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
@@ -23,9 +24,9 @@ int main() {
     yvet_v = yc - ya;
 
     float xproj_uv;
-    xproj_uv = ((xvet_u * xvet_v + yvet_u * yvet_v)/(xvet_v * xvet_v + yvet_v * yvet_v))*xvet_v;
+    xproj_uv = ((xvet_u * xvet_v + yvet_u * yvet_v) / (xvet_v * xvet_v + yvet_v * yvet_v)) * xvet_v;
     float yproj_uv;
-    yproj_uv = ((xvet_u * xvet_v + yvet_u * yvet_v)/(xvet_v * xvet_v + yvet_v * yvet_v))*yvet_v;
+    yproj_uv = ((xvet_u * xvet_v + yvet_u * yvet_v) / (xvet_v * xvet_v + yvet_v * yvet_v)) * yvet_v;
 
     float xh, yh;
     xh = xvet_u - xproj_uv;
@@ -44,5 +45,4 @@ int main() {
 
     system("pause");
     return 0;
-
 }
