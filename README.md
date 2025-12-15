@@ -1,3 +1,3 @@
 # projetos_ufu
-## Bachelor's degree in Computer Science
-__Everything I did during my undergraduate studies at UFU__
+## Bacharelado em Ciência da Computação
+__Tudo que eu fiz durante minha graduação na UFU__
