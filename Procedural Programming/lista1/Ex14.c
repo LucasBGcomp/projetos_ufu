@@ -6,7 +6,8 @@ descontados 7.5% para imposto de renda.*/
 #include <stdlib.h>
 #include <math.h>
 
-int main(){
+int main()
+{
 
     int dias;
     const float valorDia = 30.0;
@@ -22,5 +23,4 @@ int main(){
 
     system("pause");
     return 0;
-
 }

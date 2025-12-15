@@ -15,46 +15,46 @@ int main()
     float nA, nB;
     int opcao;
 
-    printf("Escolha uma das opcoes abaixo:\n1. Soma de dois numeros\n2. Diferenca de dois numeros\n3. Produto entre dois numeros\n4. Divisao entre dois numeros\nOpcao: " );
+    printf("Escolha uma das opcoes abaixo:\n1. Soma de dois numeros\n2. Diferenca de dois numeros\n3. Produto entre dois numeros\n4. Divisao entre dois numeros\nOpcao: ");
     scanf("%d", &opcao);
-    
-    while (opcao < 1 || opcao > 4) {
+
+    while (opcao < 1 || opcao > 4)
+    {
         printf("Opcao invalida! Escolha uma das opcoes abaixo:\n1. Soma de dois numeros\n2. Diferenca de dois numeros\n3. Produto entre dois numeros\n4. Divisao entre dois numeros\nOpcao: ");
         scanf("%d", &opcao);
     }
 
-    switch (opcao) {
-        case 1:
-            printf("Digite dois numeros de sua escolha: ");
-            scanf("%f %f", &nA, &nB);
-            float soma = nA + nB;
-            printf("A soma e %.2f\n", soma);
-            break;
-        case 2:
-            printf("Digite dois numeros de sua escolha: ");
-            scanf("%f %f", &nA, &nB);
-            float dif = nA - nB;
-            printf("A diferença e %.2f\n", dif);
-            break;
-        case 3:
-            printf("Digite dois numeros de sua escolha: ");
-            scanf("%f %f", &nA, &nB);
-            float produto = nA * nB;
-            printf("O produto e %.2f\n", produto);
-            break;
-        case 4:
-            do {
+    switch (opcao)
+    {
+    case 1:
+        printf("Digite dois numeros de sua escolha: ");
+        scanf("%f %f", &nA, &nB);
+        float soma = nA + nB;
+        printf("A soma e %.2f\n", soma);
+        break;
+    case 2:
+        printf("Digite dois numeros de sua escolha: ");
+        scanf("%f %f", &nA, &nB);
+        float dif = nA - nB;
+        printf("A diferença e %.2f\n", dif);
+        break;
+    case 3:
+        printf("Digite dois numeros de sua escolha: ");
+        scanf("%f %f", &nA, &nB);
+        float produto = nA * nB;
+        printf("O produto e %.2f\n", produto);
+        break;
+    case 4:
+        do
+        {
             printf("Digite dois numeros de sua escolha (O segundo nao pode ser zero!): ");
             scanf("%f %f", &nA, &nB);
-            } while (nB == 0);
-            float div = nA/nB;
-            printf("A razão e %.2f\n", div);
-            break;
-
+        } while (nB == 0);
+        float div = nA / nB;
+        printf("A razão e %.2f\n", div);
+        break;
     }
-
 
     system("pause");
     return 0;
-
 }

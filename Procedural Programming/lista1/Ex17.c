@@ -7,7 +7,8 @@ direito.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main()
+{
 
     float premio = 27000000.00;
     const float cont_a1 = 20.00;
@@ -31,5 +32,4 @@ int main() {
 
     system("pause");
     return 0;
-
 }

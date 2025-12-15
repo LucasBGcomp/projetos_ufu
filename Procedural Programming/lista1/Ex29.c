@@ -7,7 +7,8 @@ mostrar uma mensagem de erro.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main(void)
+{
 
     float vprod, vfprod;
     int estado;
@@ -17,32 +18,33 @@ int main(void) {
     printf("Digite o estado de destino:\n1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpcao: ");
     scanf("%d", &estado);
 
-    while (estado < 1 || estado > 4) {
+    while (estado < 1 || estado > 4)
+    {
         printf("Estado invalido! Digite novamente:\n");
         printf("1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpcao: ");
         scanf("%d", &estado);
     }
 
-    switch (estado) {
-        case 1:
-            vfprod = vprod * 1.07;
-            printf("O valor final do produto para entrega em MG e: R$%.2f\n", vfprod);
-            break;
-        case 2:
-            vfprod = vprod * 1.12;
-            printf("O valor final do produto para entrega em SP e: R$%.2f\n", vfprod);
-            break;
-        case 3:
-            vfprod = vprod * 1.15;
-            printf("O valor final do produto para entrega em RJ e: R$%.2f\n", vfprod);
-            break;
-        case 4:
-            vfprod = vprod * 1.08;
-            printf("O valor final do produto para entrega em MS e: R$%.2f\n", vfprod);
-            break; 
+    switch (estado)
+    {
+    case 1:
+        vfprod = vprod * 1.07;
+        printf("O valor final do produto para entrega em MG e: R$%.2f\n", vfprod);
+        break;
+    case 2:
+        vfprod = vprod * 1.12;
+        printf("O valor final do produto para entrega em SP e: R$%.2f\n", vfprod);
+        break;
+    case 3:
+        vfprod = vprod * 1.15;
+        printf("O valor final do produto para entrega em RJ e: R$%.2f\n", vfprod);
+        break;
+    case 4:
+        vfprod = vprod * 1.08;
+        printf("O valor final do produto para entrega em MS e: R$%.2f\n", vfprod);
+        break;
     }
 
     system("pause");
     return 0;
-
 }

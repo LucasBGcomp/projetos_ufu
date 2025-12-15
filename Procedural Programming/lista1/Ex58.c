@@ -13,52 +13,56 @@ int main()
     printf("Digite o numero de provas realizadas: ");
     scanf("%d", &Nprovas);
     int mt[Nalunos][Nprovas];
-    
-    for (int i = 0; i < Nalunos; i++){
-        for (int j = 0; j < Nprovas; j++){
-            
-            printf("Digite a nota do aluno %i na prova %i: ", i+1, j+1);
+
+    for (int i = 0; i < Nalunos; i++)
+    {
+        for (int j = 0; j < Nprovas; j++)
+        {
+
+            printf("Digite a nota do aluno %i na prova %i: ", i + 1, j + 1);
             scanf("%d", &mt[i][j]);
-            
         }
         printf("\n");
     }
-    
+
     float nf[Nalunos], soma;
-    
-    for (int i = 0; i < Nalunos; i++){
-        
+
+    for (int i = 0; i < Nalunos; i++)
+    {
+
         soma = 0;
-        
-        for (int j = 0; j < Nprovas; j++){
-            
+
+        for (int j = 0; j < Nprovas; j++)
+        {
+
             soma += mt[i][j];
-            
         }
-        
-        nf[i] = soma / (float) Nprovas;
-        
+
+        nf[i] = soma / (float)Nprovas;
     }
-    
-    for (int i = 0; i < Nalunos; i++){
-        
-        if (nf[i] >= 7){
-            printf("A nota final do aluno %d e: %.1f\t (Aprovado!)\n\n", i+1, nf[i]);
+
+    for (int i = 0; i < Nalunos; i++)
+    {
+
+        if (nf[i] >= 7)
+        {
+            printf("A nota final do aluno %d e: %.1f\t (Aprovado!)\n\n", i + 1, nf[i]);
         }
-        else{
-           printf("A nota final do aluno %d e: %.1f\t (Reprovado!)\n\n", i+1, nf[i]); 
+        else
+        {
+            printf("A nota final do aluno %d e: %.1f\t (Reprovado!)\n\n", i + 1, nf[i]);
         }
     }
-    
+
     float media, sm = 0;
-    
-    for (int i = 0; i < Nalunos; i++){
-        
+
+    for (int i = 0; i < Nalunos; i++)
+    {
+
         sm += nf[i];
-        media = sm / (float) Nalunos;
-        
+        media = sm / (float)Nalunos;
     }
-    
+
     printf("A note media da turma e: %.2f\n", media);
 
     system("pause");

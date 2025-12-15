@@ -4,7 +4,8 @@ preço do metro do arame, P. Calcule e imprima o custo para cercar o terreno com
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main()
+{
 
     float comprimento, largura, preco_metro, custo_total;
     float perimetro, quantidade_arame;
@@ -24,5 +25,4 @@ int main() {
 
     system("pause");
     return 0;
-
 }

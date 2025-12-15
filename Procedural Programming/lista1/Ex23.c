@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main(void)
+{
 
     float salario, prestacao;
 
@@ -13,17 +14,17 @@ int main(void) {
     printf("Digite o valor da prestacao do emprestimo (em reais): ");
     scanf("%f", &prestacao);
 
-    if (prestacao > (0.3 * salario)) {
+    if (prestacao > (0.3 * salario))
+    {
 
         printf("Emprestimo nao concedido.\n");
-
-    } else {
+    }
+    else
+    {
 
         printf("Emprestimo concedido.\n");
-
     }
 
     system("pause");
     return 0;
-
 }

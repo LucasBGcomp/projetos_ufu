@@ -10,109 +10,142 @@ a posição seguinte na ordem é o inteiro consecutivo da posição anterior.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main()
+{
 
     int m1[4][4];
 
     printf("Digite os elementos da matriz 4x4:\n");
 
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++)
+    {
 
         scanf("%d %d %d %d", &m1[i][0], &m1[i][1], &m1[i][2], &m1[i][3]);
-
     }
 
     int i = 0, j = 0;
 
-    do{
+    do
+    {
 
-        if (j < 3){
-            if (m1[i][j] == m1[i][j+1] - 1){
+        if (j < 3)
+        {
+            if (m1[i][j] == m1[i][j + 1] - 1)
+            {
                 j++;
                 continue;
-            }else{
+            }
+            else
+            {
                 printf("A matriz nao e inca!\n");
                 system("pause");
                 return 0;
-                
             }
-        } else {
-            if (i < 3){
-                if (m1[i][j] == m1[i+1][j] - 1){
+        }
+        else
+        {
+            if (i < 3)
+            {
+                if (m1[i][j] == m1[i + 1][j] - 1)
+                {
                     i++;
                     continue;
-                } else {
+                }
+                else
+                {
                     printf("A matriz nao e inca!\n");
                     system("pause");
                     return 0;
-                    
                 }
-            } else {
-                if (j > 0){
-                    if (m1[i][j] == m1[i][j-1] - 1){
+            }
+            else
+            {
+                if (j > 0)
+                {
+                    if (m1[i][j] == m1[i][j - 1] - 1)
+                    {
                         j--;
                         continue;
-                    } else {
+                    }
+                    else
+                    {
                         printf("A matriz nao e inca!\n");
                         system("pause");
                         return 0;
-                        
                     }
-                } else {
-                    if (i > 1){
-                        if (m1[i][j] == m1[i-1][j] - 1){
+                }
+                else
+                {
+                    if (i > 1)
+                    {
+                        if (m1[i][j] == m1[i - 1][j] - 1)
+                        {
                             i--;
                             continue;
-                        } else {
+                        }
+                        else
+                        {
                             printf("A matriz nao e inca!\n");
                             system("pause");
                             return 0;
-                            
                         }
-                    } else {
-                        if (j < 2){
-                            if (m1[i][j] == m1[i][j+1] - 1){
+                    }
+                    else
+                    {
+                        if (j < 2)
+                        {
+                            if (m1[i][j] == m1[i][j + 1] - 1)
+                            {
                                 j++;
                                 continue;
-                            } else {
+                            }
+                            else
+                            {
                                 printf("A matriz nao e inca!\n");
                                 system("pause");
                                 return 0;
-                                
                             }
-                        } else {
-                            if (i < 2){
-                                if (m1[i][j] == m1[i+1][j] - 1){
+                        }
+                        else
+                        {
+                            if (i < 2)
+                            {
+                                if (m1[i][j] == m1[i + 1][j] - 1)
+                                {
                                     i++;
                                     continue;
-                                } else {
+                                }
+                                else
+                                {
                                     printf("A matriz nao e inca!\n");
                                     system("pause");
                                     return 0;
-                                    
                                 }
-                            } else {
-                                if (m1[i][j] == m1[i][j-1] - 1){
+                            }
+                            else
+                            {
+                                if (m1[i][j] == m1[i][j - 1] - 1)
+                                {
                                     j--;
                                     continue;
-                                } else {
+                                }
+                                else
+                                {
                                     printf("A matriz nao e inca!\n");
                                     system("pause");
                                     return 0;
-                                    
                                 }
+                            }
                         }
                     }
                 }
             }
         }
-    }
-        
-    }while (i != 3 && j != 2);
+
+    } while (i != 3 && j != 2);
 
     printf("A matriz e inca!\n");
 
     system("pause");
     return 0;
-    
 }

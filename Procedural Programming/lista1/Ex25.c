@@ -4,7 +4,8 @@ qual é o tipo do triângulo (equilátero, isósceles ou escaleno), considerando
 #include <stdio.h>
 #include <stdlib.h>
 
-int main () {
+int main()
+{
 
     float A, B, C;
 
@@ -15,31 +16,30 @@ int main () {
     printf("Digite o valor do lado C: ");
     scanf("%f", &C);
 
-    if (A + B <= C || A + C <= B || B + C <= A) {
+    if (A + B <= C || A + C <= B || B + C <= A)
+    {
 
         printf("Os valores informados nao formam um triangulo. \n");
         system("pause");
         return 0;
-
     }
 
-    if (A == B && B == C) {
+    if (A == B && B == C)
+    {
 
         printf("O triangulo e equilatero. \n");
-
     }
-    else if ( A == B || B == C || A == C) {
+    else if (A == B || B == C || A == C)
+    {
 
         printf("O triangulo e isosceles. \n");
-
     }
-    else {
+    else
+    {
 
         printf("O triangulo e escaleno. \n");
-
     }
 
     system("pause");
     return 0;
-
 }
