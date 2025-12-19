@@ -1,11 +1,15 @@
-/*Dados tr√™s valores, A, B e C, verificar se eles podem ser valores dos lados de um tri√¢ngulo e, se forem,
-qual √© o tipo do tri√¢ngulo (equil√°tero, is√≥sceles ou escaleno), considerando os seguintes conceitos:*/
+/*Dados trÍs valores, A, B e C, verificar se eles podem ser valores dos lados de um tri‚ngulo e, se forem,
+qual È o tipo do tri‚ngulo (equil·tero, isÛsceles ou escaleno), considerando os seguintes conceitos:*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
 
     float A, B, C;
 
@@ -19,7 +23,7 @@ int main()
     if (A + B <= C || A + C <= B || B + C <= A)
     {
 
-        printf("Os valores informados nao formam um triangulo. \n");
+        printf("Os valores informados n„o formam um tri‚ngulo. \n");
         system("pause");
         return 0;
     }
@@ -27,17 +31,17 @@ int main()
     if (A == B && B == C)
     {
 
-        printf("O triangulo e equilatero. \n");
+        printf("O tri‚ngulo È equil·tero. \n");
     }
     else if (A == B || B == C || A == C)
     {
 
-        printf("O triangulo e isosceles. \n");
+        printf("O tri‚ngulo È isÛsceles. \n");
     }
     else
     {
 
-        printf("O triangulo e escaleno. \n");
+        printf("O tri‚ngulo È escaleno. \n");
     }
 
     system("pause");

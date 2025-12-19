@@ -1,11 +1,14 @@
-/*FaÃ§a um programa para ler as dimensÃµes de um terreno (comprimento C e largura L), bem como o
-preÃ§o do metro do arame, P. Calcule e imprima o custo para cercar o terreno com uma cerca de 5 fios.*/
+/*Faça um programa para ler as dimensões de um terreno (comprimento C e largura L), bem como o
+preço do metro do arame, P. Calcule e imprima o custo para cercar o terreno com uma cerca de 5 fios.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     float comprimento, largura, preco_metro, custo_total;
     float perimetro, quantidade_arame;
@@ -14,14 +17,14 @@ int main()
     scanf("%f %f", &comprimento, &largura);
     system("pause");
 
-    printf("Digite o preco do metro do arame (R$):\n");
+    printf("Digite o preço do metro do arame (R$):\n");
     scanf("%f", &preco_metro);
 
     perimetro = 2 * (comprimento + largura);
     quantidade_arame = perimetro * 5; // 5 fios
     custo_total = quantidade_arame * preco_metro;
 
-    printf("O custo total para cercar o terreno com 5 fios de arame e de R$%.2f\n", custo_total);
+    printf("O custo total para cercar o terreno com 5 fios de arame é de R$%.2f\n", custo_total);
 
     system("pause");
     return 0;

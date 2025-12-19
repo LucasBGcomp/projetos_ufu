@@ -1,11 +1,14 @@
-/*Determine se um determinado ano lido √© bissexto. Um ano √© bissexto se for divis√≠vel por 400, ou se for
-divis√≠vel por 4 e n√£o for divis√≠vel por 100.*/
+/*Determine se um determinado ano lido È bissexto. Um ano È bissexto se for divisÌvel por 400, ou se for
+divisÌvel por 4 e n„o for divisÌvel por 100.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     int ano;
 
@@ -15,12 +18,12 @@ int main()
     if ((ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)))
     {
 
-        printf("O ano %d e bissexto.\n", ano);
+        printf("O ano %d È bissexto.\n", ano);
     }
     else
     {
 
-        printf("O ano %d nao e bissexto.\n", ano);
+        printf("O ano %d n„o È bissexto.\n", ano);
     }
 
     system("pause");

@@ -1,27 +1,30 @@
 /*Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado possui uma taxa
-diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS 8%). Fa√ßa um programa em que
-o usu√°rio entre com o valor e o estado destino do produto e o programa retorne o pre√ßo final do
-produto acrescido do imposto do estado em que ele ser√° vendido. Se o estado digitado n√£o for v√°lido,
+diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS 8%). FaÁa um programa em que
+o usu·rio entre com o valor e o estado destino do produto e o programa retorne o preÁo final do
+produto acrescido do imposto do estado em que ele ser· vendido. Se o estado digitado n„o for v·lido,
 mostrar uma mensagem de erro.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main(void)
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     float vprod, vfprod;
     int estado;
 
     printf("Digite o valor do produto: R$");
     scanf("%f", &vprod);
-    printf("Digite o estado de destino:\n1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpcao: ");
+    printf("Digite o estado de destino:\n1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpÁ„o: ");
     scanf("%d", &estado);
 
     while (estado < 1 || estado > 4)
     {
-        printf("Estado invalido! Digite novamente:\n");
-        printf("1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpcao: ");
+        printf("Estado inv·lido! Digite novamente:\n");
+        printf("1 - MG\n2 - SP\n3 - RJ\n4 - MS\nOpÁ„o: ");
         scanf("%d", &estado);
     }
 
@@ -29,19 +32,19 @@ int main(void)
     {
     case 1:
         vfprod = vprod * 1.07;
-        printf("O valor final do produto para entrega em MG e: R$%.2f\n", vfprod);
+        printf("O valor final do produto para entrega em MG È: R$%.2f\n", vfprod);
         break;
     case 2:
         vfprod = vprod * 1.12;
-        printf("O valor final do produto para entrega em SP e: R$%.2f\n", vfprod);
+        printf("O valor final do produto para entrega em SP È: R$%.2f\n", vfprod);
         break;
     case 3:
         vfprod = vprod * 1.15;
-        printf("O valor final do produto para entrega em RJ e: R$%.2f\n", vfprod);
+        printf("O valor final do produto para entrega em RJ È: R$%.2f\n", vfprod);
         break;
     case 4:
         vfprod = vprod * 1.08;
-        printf("O valor final do produto para entrega em MS e: R$%.2f\n", vfprod);
+        printf("O valor final do produto para entrega em MS È: R$%.2f\n", vfprod);
         break;
     }
 

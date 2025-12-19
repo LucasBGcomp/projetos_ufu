@@ -1,17 +1,20 @@
-/*Os incas ficaram conhecidos pela grande civiliza√ß√£o que reinou na regi√£o dos Andes durante v√°rios
-s√©culos. O que pouca gente sabe √© que os incas constru√≠ram pir√¢mides de base quadrada em que a
-√∫nica forma de se atingir o topo era seguir em espiral pela borda, que acabava formando uma escada
-em espiral. Estas pir√¢mides ainda se encontram escondidas na floresta amaz√¥nica e sua descoberta
-trar√° uma aplica√ß√£o para este exerc√≠cio. Neste problema voc√™ dever√° fazer um programa para verificar
-se uma matriz quadrada de dimens√£o 4 com n√∫meros inteiros √© ou n√£o inca. A matriz √© inca quando,
-partindo do canto superior esquerdo da matriz, no sentido hor√°rio, em espiral, for poss√≠vel verificar que
-a posi√ß√£o seguinte na ordem √© o inteiro consecutivo da posi√ß√£o anterior.*/
+/*Os incas ficaram conhecidos pela grande civilizaÁ„o que reinou na regi„o dos Andes durante v·rios
+sÈculos. O que pouca gente sabe È que os incas construÌram pir‚mides de base quadrada em que a
+˙nica forma de se atingir o topo era seguir em espiral pela borda, que acabava formando uma escada
+em espiral. Estas pir‚mides ainda se encontram escondidas na floresta amazÙnica e sua descoberta
+trar· uma aplicaÁ„o para este exercÌcio. Neste problema vocÍ dever· fazer um programa para verificar
+se uma matriz quadrada de dimens„o 4 com n˙meros inteiros È ou n„o inca. A matriz È inca quando,
+partindo do canto superior esquerdo da matriz, no sentido hor·rio, em espiral, for possÌvel verificar que
+a posiÁ„o seguinte na ordem È o inteiro consecutivo da posiÁ„o anterior.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     int m1[4][4];
 
@@ -37,7 +40,7 @@ int main()
             }
             else
             {
-                printf("A matriz nao e inca!\n");
+                printf("A matriz n„o È inca!\n");
                 system("pause");
                 return 0;
             }
@@ -53,7 +56,7 @@ int main()
                 }
                 else
                 {
-                    printf("A matriz nao e inca!\n");
+                    printf("A matriz n„o È inca!\n");
                     system("pause");
                     return 0;
                 }
@@ -69,7 +72,7 @@ int main()
                     }
                     else
                     {
-                        printf("A matriz nao e inca!\n");
+                        printf("A matriz n„o È inca!\n");
                         system("pause");
                         return 0;
                     }
@@ -85,7 +88,7 @@ int main()
                         }
                         else
                         {
-                            printf("A matriz nao e inca!\n");
+                            printf("A matriz n„o È inca!\n");
                             system("pause");
                             return 0;
                         }
@@ -101,7 +104,7 @@ int main()
                             }
                             else
                             {
-                                printf("A matriz nao e inca!\n");
+                                printf("A matriz n„o È inca!\n");
                                 system("pause");
                                 return 0;
                             }
@@ -117,7 +120,7 @@ int main()
                                 }
                                 else
                                 {
-                                    printf("A matriz nao e inca!\n");
+                                    printf("A matriz n„o È inca!\n");
                                     system("pause");
                                     return 0;
                                 }
@@ -131,7 +134,7 @@ int main()
                                 }
                                 else
                                 {
-                                    printf("A matriz nao e inca!\n");
+                                    printf("A matriz n„o È inca!\n");
                                     system("pause");
                                     return 0;
                                 }
@@ -144,7 +147,7 @@ int main()
 
     } while (i != 3 && j != 2);
 
-    printf("A matriz e inca!\n");
+    printf("A matriz È inca!\n");
 
     system("pause");
     return 0;

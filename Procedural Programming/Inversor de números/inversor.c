@@ -4,25 +4,25 @@
 int main()
 {
 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     int x, y;
 
-    printf("Seja bem-vindo ao Inversor de NÃºmeros!\n");
-    printf("Escolha um nÃºmero que satisfaÃ§a as seguintes condiÃ§Ãµes:\n");
-    printf("NÃºmero inteiro;\nPositivo;\nCom pelo menos dois dÃ­gitos.\n");
-    printf("Digite o nÃºmero escolhido:");
+    printf("Seja bem-vindo ao Inversor de Números!\n");
+    printf("Escolha um número que satisfaça as seguintes condições:\n");
+    printf("Número inteiro;\nPositivo;\nCom pelo menos dois dígitos.\n");
+    printf("Digite o número escolhido: ");
     scanf("%i", &x);
 
     while (x < 10 || x < 0 || x % 1 != 0)
     {
 
-        printf("NÃºmero invÃ¡lido. Por favor, escolha um nÃºmero que satisfaÃ§a as condiÃ§Ãµes mencionadas:\n");
-        printf("Digite o nÃºmero escolhido:");
+        printf("Número inválido. Por favor, escolha um número que satisfaça as condições mencionadas:\n");
+        printf("Digite o número escolhido:");
         scanf("%i", &x);
     }
 
-    printf("Agora vamos escrever seu nÃºmero ao contrÃ¡rio!\n");
+    printf("Agora vamos escrever seu número ao contrário!\n");
 
     while (x > 0)
     {

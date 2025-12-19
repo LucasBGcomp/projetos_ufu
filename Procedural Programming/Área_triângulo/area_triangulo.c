@@ -6,7 +6,7 @@
 int main()
 {
 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     float xa, ya, xb, yb, xc, yc;
     float xvet_u, yvet_u, xvet_v, yvet_v;
@@ -41,7 +41,7 @@ int main()
     float area;
     area = (comp_h * comp_v) / 2;
 
-    printf("A √°rea do tri√¢ngulo formado pelos pontos A, B e C √©: %.2f u.a\n", area);
+    printf("A ·rea do tri‚ngulo formado pelos pontos A, B e C È: %.2f u.a\n", area);
 
     system("pause");
     return 0;

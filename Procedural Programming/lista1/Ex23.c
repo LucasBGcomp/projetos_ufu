@@ -1,28 +1,31 @@
-/*Receba o valor do sal√°rio de um trabalhador e o valor da presta√ß√£o de um empr√©stimo. Se a presta√ß√£o for maior que 30% do sal√°rio, imprima ‚ÄúEmprestimo nao concedido‚Äù. Caso contr√°rio, imprima         ‚ÄúEmprestimo concedido‚Äù.*/
+/*Receba o valor do sal·rio de um trabalhador e o valor da prestaÁ„o de um emprÈstimo. Se a prestaÁ„o for maior que 30% do sal·rio, imprima ?Emprestimo nao concedido?. Caso contr·rio, imprima         ?Emprestimo concedido?.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main(void)
 {
 
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     float salario, prestacao;
 
-    printf("Digite o valor do salario do trabalhador (em reais): ");
+    printf("Digite o valor do sal·rio do trabalhador (em reais): ");
     scanf("%f", &salario);
 
-    printf("Digite o valor da prestacao do emprestimo (em reais): ");
+    printf("Digite o valor da prestaÁ„o do emprÈstimo (em reais): ");
     scanf("%f", &prestacao);
 
     if (prestacao > (0.3 * salario))
     {
 
-        printf("Emprestimo nao concedido.\n");
+        printf("EmprÈstimo n„o concedido.\n");
     }
     else
     {
 
-        printf("Emprestimo concedido.\n");
+        printf("EmprÈstimo concedido.\n");
     }
 
     system("pause");

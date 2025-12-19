@@ -1,16 +1,20 @@
 /*Leia uma matriz 10 x 3 com as notas de 10 alunos em 3 provas. Crie um vetor que armazene a nota
-final de cada aluno, calculada a partir da mÃ©dia aritmÃ©tica das notas das 3 provas. Imprima o vetor
-resultante. AlÃ©m disso, calcule e imprima a mÃ©dia da turma.*/
+final de cada aluno, calculada a partir da média aritmética das notas das 3 provas. Imprima o vetor
+resultante. Além disso, calcule e imprima a média da turma.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     int Nalunos, Nprovas;
-    printf("Digite o numero de alunos da turma: ");
+    printf("Digite o número de alunos da turma: ");
     scanf("%d", &Nalunos);
-    printf("Digite o numero de provas realizadas: ");
+    printf("Digite o número de provas realizadas: ");
     scanf("%d", &Nprovas);
     int mt[Nalunos][Nprovas];
 
@@ -63,7 +67,7 @@ int main()
         media = sm / (float)Nalunos;
     }
 
-    printf("A note media da turma e: %.2f\n", media);
+    printf("A note média da turma é: %.2f\n", media);
 
     system("pause");
     return 0;

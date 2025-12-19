@@ -3,9 +3,13 @@ e a preencha com os maiores elementos de M1 e M2 na posiÃ§Ã£o correspondente.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     int m1[3][3], m2[3][3], m3[3][3];
 
     printf("Digite a matriz M1 (3x3):\n");
@@ -24,7 +28,7 @@ int main()
         scanf("%i %i %i", &m2[i][0], &m2[i][1], &m2[i][2]);
     }
 
-    printf("A matriz M3 (3x3) sera formada pelos maiores valores de cada posicao das matrizes M1 e M2:\n");
+    printf("A matriz M3 (3x3) será formada pelos maiores valores de cada posição das matrizes M1 e M2:\n");
 
     for (int i = 0; i < 3; i++)
     {
@@ -49,6 +53,7 @@ int main()
 
         printf("%.2i %.2i %.2i", m3[i][0], m3[i][1], m3[i][2]);
         printf("\n");
+        
     }
 
     system("pause");
