@@ -16,17 +16,21 @@ int main()
 
     int ntrocas;
 
-    printf("Insira o Nº de posições que deseja deslocar (mín 1): ");
+    do{
+    printf("Insira o Nº de posições que deseja deslocar (1 - 25): ");
     scanf("%d", &ntrocas);
-    fflush(stdin);
+    setbuf(stdin, NULL);
+    }while (ntrocas < 1 || ntrocas > 25);
 
     char stri[50], strf[50]; // inicial e final
 
-    printf("Insira a frase a ser criptografada: ");
+    printf("\nInsira a frase a ser criptografada: ");
     scanf("%49[^\n]", stri);
-    fflush(stdin);
+    setbuf(stdin, NULL);
 
-    for (int i = 0; i < strlen(stri); i++)
+    int len = strlen(stri);
+    
+    for (int i = 0; i < (int)len; i++)
     {
         if (stri[i] >= 'a' && stri[i] <= 'z')
         {

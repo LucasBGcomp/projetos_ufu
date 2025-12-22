@@ -15,7 +15,7 @@ int main(){
     char ivt[50];
 
     printf("Digite uma palavra ou frase: ");
-    fflush(stdin);
+    setbuf(stdin, NULL);
     scanf("%49[^\n]", str);
 
     for (int i = strlen(str) - 1; i >= 0 ; i--)

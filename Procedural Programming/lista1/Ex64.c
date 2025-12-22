@@ -14,7 +14,7 @@ int main()
     do{
     printf("Quantos nomes deseja inserir? (mín 2): ");
     scanf("%d", &nstrings);
-    fflush(stdin);
+    setbuf(stdin, NULL);
     }while (nstrings < 2);
 
     char strings[nstrings][50];
@@ -23,7 +23,7 @@ int main()
     {
         printf("Insira o nome %d: ", i + 1);
         scanf("%49[^\n]", strings[i]);
-        fflush(stdin);
+        setbuf(stdin, NULL);
     }
 
     char temp[50];
