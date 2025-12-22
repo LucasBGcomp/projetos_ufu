@@ -11,9 +11,11 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     int nstrings;
-    printf("Quantos nomes deseja inserir?: ");
+    do{
+    printf("Quantos nomes deseja inserir? (mín 2): ");
     scanf("%d", &nstrings);
     fflush(stdin);
+    }while (nstrings < 2);
 
     char strings[nstrings][50];
 
