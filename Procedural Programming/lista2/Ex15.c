@@ -26,6 +26,7 @@ int main()
     printf("Quantos eletrodomésticos você deseja cadastrar? ");
     scanf("%d", &n);
     setbuf(stdin, NULL);
+    printf("\n");
     eletrodomesticos ed[n];
 
     for (int i = 0; i < n; i++){
