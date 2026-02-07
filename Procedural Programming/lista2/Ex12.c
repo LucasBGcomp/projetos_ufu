@@ -1,5 +1,4 @@
-/*Crie uma estrutura para representar um vetor no R3, implemente um programa que calcule a soma de
-dois vetores.*/
+/*Crie uma estrutura para representar um vetor no R3, implemente um programa que calcule a soma de vetores.*/
 
 #include <stdio.h>
 #include <stdlib.h>
