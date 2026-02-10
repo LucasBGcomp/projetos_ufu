@@ -6,27 +6,33 @@ caracteres e mostre na tela quantas letras são vogais e quantas são consoantes.*
 #include <string.h>
 #include <locale.h>
 
-int main() {
+int main()
+{
 
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     FILE *fp;
     fp = fopen("Ex1_arq.txt", "r");
-    if (fp == NULL) {
+    if (fp == NULL)
+    {
         printf("Erro ao abrir o arquivo!");
-        exit (1);
+        exit(1);
     }
 
     char c;
     int vogais = 0, consoantes = 0;
     printf("Conteúdo do arquivo: ");
-    while ((c = fgetc(fp)) != EOF) {
-        if ((c >= 'a' && c<='z') || (c >= 'A' && c <= 'Z'))
+    while ((c = fgetc(fp)) != EOF)
+    {
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
         {
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
-                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+            {
                 vogais++;
-            } else {
+            }
+            else
+            {
                 consoantes++;
             }
         }
