@@ -10,23 +10,27 @@ um ponto em coordenada polar e mostre as coordenadas do ponto gerado no plano ca
 #include <math.h>
 #include <locale.h>
 
-int main(){
+int main()
+{
 
     setlocale(LC_ALL, "Portuguese_Brazil");
 
-    typedef struct {
+    typedef struct
+    {
 
         float r, a;
 
     } cpolar;
 
-    typedef struct {
+    typedef struct
+    {
 
         float x, y;
 
     } ccartesiana;
 
-    typedef struct {
+    typedef struct
+    {
 
         cpolar cpolar;
         ccartesiana ccartesiana;

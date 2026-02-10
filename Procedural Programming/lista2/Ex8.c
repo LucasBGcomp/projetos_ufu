@@ -8,11 +8,13 @@ dados devem ser digitados pelo usuário, armazenados na estrutura e exibidos na t
 #include <stdlib.h>
 #include <locale.h>
 
-int main() {
+int main()
+{
 
     setlocale(LC_ALL, "Portuguese_Brazil");
 
-    typedef struct {
+    typedef struct
+    {
         char nome[50];
         int idade;
         char sexo;
@@ -42,7 +44,8 @@ int main() {
     printf("Digite a data de nascimento do funcionário (DD/MM/AAAA): ");
     scanf("%11[^\n]", fcn.dataNascimento);
     setbuf(stdin, NULL);
-    do {
+    do
+    {
         printf("Digite o código do setor onde o funcionário trabalha (0-99): ");
         scanf("%d", &fcn.codigoSetor);
         setbuf(stdin, NULL);
@@ -60,5 +63,4 @@ int main() {
 
     system("pause");
     return 0;
-
 }

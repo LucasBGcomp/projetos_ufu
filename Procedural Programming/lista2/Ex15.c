@@ -10,17 +10,17 @@ porcentagem.*/
 #include <string.h>
 #include <locale.h>
 
-
 int main()
 {
 
     setlocale(LC_ALL, "Portuguese_Brazil");
 
-    typedef struct {
+    typedef struct
+    {
         char nome[16];
         float potencia;
         float tempopordia;
-    }eletrodomesticos;
+    } eletrodomesticos;
 
     int n;
     printf("Quantos eletrodomésticos você deseja cadastrar? ");
@@ -29,17 +29,18 @@ int main()
     printf("\n");
     eletrodomesticos ed[n];
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
 
-        printf("Digite o nome do eletrodoméstico %d: ", i+1);
+        printf("Digite o nome do eletrodoméstico %d: ", i + 1);
         scanf("%15[^\n]s", ed[i].nome);
         setbuf(stdin, NULL);
 
-        printf("Digite a potência do eletrodoméstico %d (em kW): ", i+1);
+        printf("Digite a potência do eletrodoméstico %d (em kW): ", i + 1);
         scanf("%f", &ed[i].potencia);
         setbuf(stdin, NULL);
 
-        printf("Digite o tempo ativo por dia do eletrodoméstico %d (em horas): ", i+1);
+        printf("Digite o tempo ativo por dia do eletrodoméstico %d (em horas): ", i + 1);
         scanf("%f", &ed[i].tempopordia);
         setbuf(stdin, NULL);
 
@@ -52,7 +53,8 @@ int main()
     setbuf(stdin, NULL);
 
     float consumoparcial[n], consumototal = 0;
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
 
         consumoparcial[i] = ed[i].potencia * ed[i].tempopordia * dias;
         consumototal += consumoparcial[i];
@@ -62,11 +64,11 @@ int main()
 
     printf("O consumo relativo de cada eletrodoméstico é:\n\n");
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
 
-        printf("%s:\t%.2f%%\n\n", ed[i].nome, (consumoparcial[i]/consumototal)*100);
+        printf("%s:\t%.2f%%\n\n", ed[i].nome, (consumoparcial[i] / consumototal) * 100);
         printf("-------------------------------------\n\n");
-
     }
 
     system("pause");
