@@ -1,4 +1,8 @@
-
+/*Escreva um programa C que:
+a. Crie um arquivo texto de nome ?arq.txt?.
+b. Permita que o usuário entre com diversos caracteres nesse arquivo, até que seja digitado
+ENTER.
+c. Feche o arquivo.*/
 
 #include <stdio.h>
 #include <stdlib.h>
