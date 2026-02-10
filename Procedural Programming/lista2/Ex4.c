@@ -6,7 +6,7 @@
 int main(){
 
     FILE *fp;
-    fp = fopen("C:\\lucas\\comp\\projetos_ufu\\Procedural Programming\\lista2\\output\\Exc_arquivos\\Ex4_arq.txt", "w");
+    fp = fopen("Ex4_arq.txt", "w");
     if (fp == NULL){
         printf("Erro ao abrir o arquivo!");
         exit(1);

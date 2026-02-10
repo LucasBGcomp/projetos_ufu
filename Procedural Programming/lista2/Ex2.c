@@ -11,7 +11,7 @@ int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     FILE *fp;
-    fp = fopen("C:\\lucas\\comp\\projetos_ufu\\Procedural Programming\\lista2\\output\\Exc_arquivos\\Ex1_arq.txt", "r");
+    fp = fopen("Ex1_arq.txt", "r");
     if (fp == NULL) {
         printf("Erro ao abrir o arquivo!");
         exit (1);
