@@ -1,0 +1,16 @@
+Nome: Lucas Espindula Borges
+Número de Matrícula: 12521BCC032
+Curso: Ciencia da Computacao
+
+Nome: Kaua Fonseca
+Número de Matrícula: 12521BCC031
+Curso: Ciencia da Computacao
+
+Nome: Vinicius Oliveira
+Número de Matrícula: 12521BCC030
+Curso: Ciencia da Computacao
+
+Nome: Gustavo Valentim
+Número de Matrícula: 12521BCC029
+Curso: Ciencia da Computacao
+
