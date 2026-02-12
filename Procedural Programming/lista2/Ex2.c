@@ -39,7 +39,7 @@ int main()
         printf("%c", c);
     }
 
-    printf("\nQuantidade de vogais: %d\n", vogais);
+    printf("\n\nQuantidade de vogais: %d\n", vogais);
     printf("\nQuantidade de consoantes: %d\n\n", consoantes);
 
     fclose(fp);

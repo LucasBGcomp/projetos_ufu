@@ -21,13 +21,13 @@ int main()
         exit(1);
     }
 
-    char s[100];
-    printf("Digite uma string: ");
-    scanf("%99[^\n]s", s);
-    setbuf(stdin, NULL);
-    printf("\nString gravada no arquivo com sucesso!!\n\n");
+    char c;
+    printf("Digite os caracteres para o arquivo (pressione ENTER para finalizar):\n");
+    while ((c = fgetc(stdin)) != '\n')
+    {
 
-    fprintf(fp, "%s\n", s);
+        fputc(c, fp);
+    }
 
     fclose(fp);
     system("pause");
