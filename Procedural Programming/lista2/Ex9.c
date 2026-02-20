@@ -54,7 +54,7 @@ int main()
     }
 
     FILE *fp;
-    fp = fopen("Ex9_arq.txt", "w");
+    fp = fopen("Ex9L2_arq.txt", "w");
     if (fp == NULL)
     {
         printf("Erro ao abrir/criar o arquivo!!\n");

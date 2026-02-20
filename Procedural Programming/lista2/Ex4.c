@@ -7,7 +7,7 @@ int main()
 {
 
     FILE *fp;
-    fp = fopen("Ex4_arq.txt", "w");
+    fp = fopen("Ex4L2_arq.txt", "w");
     if (fp == NULL)
     {
         printf("Erro ao abrir o arquivo!");
