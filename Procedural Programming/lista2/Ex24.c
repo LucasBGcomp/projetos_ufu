@@ -21,12 +21,12 @@ int fib(int n)
 int main()
 {
 
-    setlocale(LC_ALL, "Portuguese_Brazil.1252");
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     int n;
     do
     {
-        printf("Digite um número inteiro maior que zero: ");
+        printf("Digite um número inteiro e maior que zero: ");
         scanf("%d", &n);
         setbuf(stdin, NULL);
     } while (n <= 0);
