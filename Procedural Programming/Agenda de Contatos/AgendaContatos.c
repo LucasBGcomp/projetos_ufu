@@ -7,7 +7,7 @@ typedef struct
 {
     char *nome;
     char endereco[50];
-    char telefone[20]; // Alterado para string (char array) para evitar estouro de limite de int e permitir zeros à esquerda
+    char telefone[20]; 
     char email[30];
 } contato;
 
@@ -17,7 +17,7 @@ void limparBuffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Passamos **agenda e *NMAXcontatos para poder dar realloc na main se necessário
+
 void addcontato(contato **agenda, int *Ncontatos, int *NMAXcontatos)
 {
     if (*Ncontatos >= *NMAXcontatos)
@@ -73,7 +73,7 @@ void exibircontatos(contato *agenda, int Ncontatos)
     {
         printf("Nome: %s\n", agenda[i].nome);
         printf("Endereço: %s\n", agenda[i].endereco);
-        printf("Telefone: %s\n", agenda[i].telefone); // %s porque agora é string
+        printf("Telefone: %s\n", agenda[i].telefone); 
         printf("Email: %s\n", agenda[i].email);
         printf("-----------------------------\n");
     }
@@ -86,7 +86,7 @@ void salvarctt(contato *agenda, int Ncontatos)
     if (fp == NULL)
     {
         printf("Erro ao salvar os contatos!\n");
-        return; // Melhor dar return do que exit(1) para não fechar o app bruscamente
+        return; 
     }
     
     fwrite(&Ncontatos, sizeof(int), 1, fp);
@@ -97,14 +97,13 @@ void salvarctt(contato *agenda, int Ncontatos)
         fwrite(&nome_len, sizeof(int), 1, fp);
         fwrite(agenda[i].nome, sizeof(char), nome_len, fp);
         fwrite(agenda[i].endereco, sizeof(char), 50, fp);
-        fwrite(agenda[i].telefone, sizeof(char), 20, fp); // Alterado para 20 chars
+        fwrite(agenda[i].telefone, sizeof(char), 20, fp); 
         fwrite(agenda[i].email, sizeof(char), 30, fp);
     }
     fclose(fp);
     printf("Contatos salvos com sucesso!\n\n");
 }
 
-// Agora recebe ponteiro para ponteiro de agenda e o NMAXcontatos
 int carregarctt(contato **agenda, int *NMAXcontatos)
 {
     FILE *fp = fopen("agenda.dat", "rb");
@@ -117,7 +116,7 @@ int carregarctt(contato **agenda, int *NMAXcontatos)
     int Ncontatos;
     fread(&Ncontatos, sizeof(int), 1, fp);
 
-    // Se houver contatos no arquivo, precisamos garantir que a agenda tenha tamanho para eles!
+    
     if (Ncontatos > 0) {
         *NMAXcontatos = Ncontatos + 2; // Dá um folga na memória
         *agenda = (contato *)realloc(*agenda, (*NMAXcontatos) * sizeof(contato));
@@ -154,7 +153,6 @@ void PesquisarNome(contato *agenda, int Ncontatos)
     int encontrado = 0;
     for (int i = 0; i < Ncontatos; i++)
     {
-        // strcasecmp ignoraria maiúsculas e minúsculas, mas strcmp resolve o básico.
         if (strcmp(agenda[i].nome, nome_pesquisado) == 0)
         {
             printf("\n--- Contato Encontrado ---\n");
@@ -212,7 +210,6 @@ int main()
         exit(1);
     }
 
-    // Passa o endereço de agenda e NMAXcontatos para atualizar a memória principal
     int Ncontatos = carregarctt(&agenda, &NMAXcontatos); 
 
     int opcao;
@@ -227,7 +224,7 @@ int main()
         printf("6 - Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
-        limparBuffer(); // Limpa o "Enter" que sobra após digitar a opção numérico
+        limparBuffer(); 
 
         switch (opcao)
         {
