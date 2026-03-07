@@ -28,11 +28,11 @@ int main()
     {
 
         printf("Digite o modelo do carro %d: ", i + 1);
-        scanf(" %20[^\n]s", veiculo[i].modelo);
+        scanf(" %20[^\n]", veiculo[i].modelo);
         setbuf(stdin, NULL);
 
         printf("Digite a marca do carro %d: ", i + 1);
-        scanf(" %15[^\n]s", veiculo[i].marca);
+        scanf(" %15[^\n]", veiculo[i].marca);
         setbuf(stdin, NULL);
 
         printf("Digite o ano do carro %d: ", i + 1);

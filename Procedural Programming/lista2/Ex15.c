@@ -33,7 +33,7 @@ int main()
     {
 
         printf("Digite o nome do eletrodoméstico %d: ", i + 1);
-        scanf("%15[^\n]s", ed[i].nome);
+        scanf("%15[^\n]", ed[i].nome);
         setbuf(stdin, NULL);
 
         printf("Digite a potência do eletrodoméstico %d (em kW): ", i + 1);

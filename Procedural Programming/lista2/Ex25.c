@@ -71,7 +71,7 @@ int main()
 
     char cpf[10];
     printf("Digite os 9 primeiros dígitos do seu CPF: ");
-    scanf("%9[^\n]s", cpf);
+    scanf("%9[^\n]", cpf);
     setbuf(stdin, NULL);
 
     int vcpf[9];

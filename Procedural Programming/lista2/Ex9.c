@@ -29,15 +29,15 @@ int main()
     {
 
         printf("Digite o nome do aluno %d: ", i + 1);
-        scanf("%49[^\n]s", alunos[i].nome);
+        scanf("%49[^\n]", alunos[i].nome);
         setbuf(stdin, NULL);
 
         printf("Digite o número de matrícula do aluno %d: ", i + 1);
-        scanf("%11[^\n]s", alunos[i].nmatricula);
+        scanf("%11[^\n]", alunos[i].nmatricula);
         setbuf(stdin, NULL);
 
         printf("Digite o curso do aluno %d: ", i + 1);
-        scanf("%24[^\n]s", alunos[i].curso);
+        scanf("%24[^\n]", alunos[i].curso);
         setbuf(stdin, NULL);
 
         printf("\n");

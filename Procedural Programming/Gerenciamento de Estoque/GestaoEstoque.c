@@ -23,7 +23,7 @@ void cadastrarProduto(produto p[], int *n)
     setbuf(stdin, NULL);
 
     printf("Nome: ");
-    scanf("%24[^\n]s", p[*n].nome);
+    scanf("%24[^\n]", p[*n].nome);
     setbuf(stdin, NULL);
 
     printf("Quantidade: ");
