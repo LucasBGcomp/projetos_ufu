@@ -1,4 +1,7 @@
-/*Autores: Lucas Espíndula Borges, André Moraes Rodrigues, Gabriel dos Santos do Amaral*/
+/*Autores: Lucas Espíndula Borges, 
+André Moraes Rodrigues, 
+Gabriel dos Santos do Amaral, 
+João Vitor de Queiroz Pereira.*/
 
 #include <stdio.h>
 #include <stdlib.h>
