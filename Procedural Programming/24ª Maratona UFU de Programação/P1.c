@@ -14,13 +14,13 @@ int main() {
 
     char *S = (char *) malloc(sizeof(char) * 1000000);
     if (S == NULL) {
-        printf("Erro ao alocar memória para a string S.\n");
-        exit(1); // Encerra o programa com código de erro
+        printf("Erro ao alocar memória para a string.\n");
+        exit(1); 
     }
-    printf("\nDigite 0's e 1's sem espaços:\n\t(O tamanho deve ser múltiplo de n)\n\t(Os 0's repesentam cartas quaisque e os 1's representam cartas a serem compradas)\n");
+    printf("\nDigite 0's e 1's sem espaços:\n\t(O tamanho deve ser múltiplo de n)\n\t(Os 0's repesentam cartas quaisquer e os 1's representam cartas a serem compradas)\n");
     scanf(" %[^\n]", S);
-    S = (char *) realloc(S, (strlen(S) + 1) * sizeof(char)); // Redimensiona a memória alocada para a string S
-    S[strlen(S) + 1] = '\0'; // Garante que a string seja terminada com null
+    S = (char *) realloc(S, (strlen(S) + 1) * sizeof(char)); 
+    S[strlen(S) + 1] = '\0'; 
 
     int gasto = 0, natualizacoes = 0;
     for (int i = 0; i < strlen(S); i++) {

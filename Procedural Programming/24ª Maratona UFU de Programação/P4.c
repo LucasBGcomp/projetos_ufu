@@ -26,11 +26,10 @@ int main()
     }
 
     char *caminho;
-    caminho = (char *)malloc(10000 * sizeof(char)); // Aloca memória para o caminho
+    caminho = (char *)malloc(10000 * sizeof(char)); 
     printf("\nDigite, sem espaços, o caminho a ser percorrido (direita = D, esquerda = E, frente = F, trás = T):\n");
     scanf(" %[^\n]", caminho);
-    caminho = (char *)realloc(caminho, (strlen(caminho) + 1) * sizeof(char)); // Redimensiona a memória alocada para o caminho
-    caminho[strlen(caminho) + 1] = '\0';                                      // Garante que a string seja terminada com null
+    caminho = (char *)realloc(caminho, (strlen(caminho) + 1) * sizeof(char)); 
 
     int posX = 0, posY = 0; // Posição inicial do carrinho
 
