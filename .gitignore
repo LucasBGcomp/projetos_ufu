@@ -146,7 +146,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-.env
-*.log
-credentials.json
