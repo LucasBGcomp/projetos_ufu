@@ -8,7 +8,8 @@ seguindo os passos:
 #include <locale.h>
 #include "mdc.h"
 
-int main() {
+int main()
+{
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     int num1, num2;
