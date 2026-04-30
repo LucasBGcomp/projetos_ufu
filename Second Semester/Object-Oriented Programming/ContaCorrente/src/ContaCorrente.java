@@ -36,14 +36,14 @@ public class ContaCorrente {
     void transferir(float valor, ContaCorrente contaDestino) {
         if (valor > this.saldo) {
             if (this.isEspecial) {
-                System.out.println("Transferência autorizada. O valor transferido da conta de " + this.titular + " para a conta de " + contaDestino.titular + " é: " + valor);
+                System.out.println("Transferência OK! O valor transferido da conta de " + this.titular + " para a conta de " + contaDestino.titular + " é: " + valor);
                 this.saldo -= valor;
                 contaDestino.depositar(valor);
             } else {
                 System.out.println(this.titular + ", Saldo insuficiente para realizar a transferência.");
             }
         } else {
-            System.out.println("Transferência autorizada. O valor transferido da conta de " + this.titular + " para a conta de " + contaDestino.titular + " é: " + valor);
+            System.out.println("Transferência OK! O valor transferido da conta de " + this.titular + " para a conta de " + contaDestino.titular + " é: " + valor);
             this.saldo -= valor;
             contaDestino.depositar(valor);
         }
