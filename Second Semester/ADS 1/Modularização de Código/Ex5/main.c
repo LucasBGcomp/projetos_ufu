@@ -17,7 +17,7 @@ int main()
 
     int n;
     do{
-    printf("Digite a ordem da matriz quadrada: ");
+    printf("Digite a ordem da matriz quadrada (n > 0 && n <= 100): ");
     scanf("%d", &n);
     } while (n <= 0 || n > 100);
 
