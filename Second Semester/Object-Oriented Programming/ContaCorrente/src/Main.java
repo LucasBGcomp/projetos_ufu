@@ -1,41 +1,66 @@
 public class Main {
     public static void main(String[] args) {
-        ContaCorrente c1 = new ContaCorrente("Lucas", true);
-        ContaCorrente c2 = new ContaCorrente("Leonardo", false);
+        Cliente cliente1 = new Cliente ("Lucas", "Rua A, 123");
+        Cliente cliente2 = new Cliente ("Maria", "Rua B, 456");
+        System.out.println();
+        ContaCorrente conta1 = new ContaCorrente(cliente1, true);
+        ContaCorrente conta2 = new ContaCorrente(cliente2, false);
+
         System.out.println();
 
-        c1.exibirSaldo();
-        c2.exibirSaldo();
+        conta1.exibirSaldo();
+        conta2.exibirSaldo();
+
         System.out.println();
 
-        c1.sacar(100.0f);
-        c1.exibirSaldo();
+        conta1.depositar(500.0);
+        conta1.exibirSaldo();
+
         System.out.println();
 
-        c2.sacar(250.0f);
-        c2.exibirSaldo();
+        conta1.sacar(200.0);
+        conta1.exibirSaldo();
+
         System.out.println();
 
-        c1.depositar(200.0f);
-        c1.exibirSaldo();
+        conta2.depositar(200.0);
+        conta2.exibirSaldo();
+
         System.out.println();
 
-        c2.depositar(150.0f);
-        c2.exibirSaldo();
+        conta2.sacar(300.0);
+        conta2.exibirSaldo();
+
         System.out.println();
 
-        c1.transferir(1200.0f, c2);
-        c1.exibirSaldo();
-        c2.exibirSaldo();
+        conta1.transferir(300.0, conta2);
+        conta1.exibirSaldo();
+        conta2.exibirSaldo();
+
         System.out.println();
 
-        c2.transferir(100.0f, c1);
-        c1.exibirSaldo();
-        c2.exibirSaldo();
+        conta1.transferir(1200.0, conta2);
+        conta1.exibirSaldo();
+        conta2.exibirSaldo();
+
         System.out.println();
 
-        c2.transferir(2100.0f, c2);
-        c1.exibirSaldo();
-        c2.exibirSaldo();
+        conta2.transferir(500.0, conta1);
+        conta2.exibirSaldo();
+        conta1.exibirSaldo();
+
+        System.out.println();
+
+        conta2.transferir(2500.0, conta1);
+        conta2.exibirSaldo();
+        conta1.exibirSaldo();
+
+        System.out.println();
+
+        conta1.exibirExtrato();
+
+        System.out.println();
+
+        conta2.exibirExtrato();
     }
 }
