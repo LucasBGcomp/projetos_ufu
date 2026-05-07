@@ -1,4 +1,5 @@
 import java.util.Vector;
+
 public class ContaCorrente {
     Cliente titular;
     double saldo;
@@ -24,14 +25,17 @@ public class ContaCorrente {
             if (transacao.tipo.equals("Saque")) {
                 System.out.println("Saque:");
                 System.out.println("  Valor: " + transacao.valor);
+                System.out.println();
             } else if (transacao.tipo.equals("Depósito")) {
                 System.out.println("Depósito:");
                 System.out.println("  Valor: " + transacao.valor);
+                System.out.println();
             } else if (transacao.tipo.equals("Transferência")) {
                 System.out.println("Transferência:");
                 System.out.println("  Valor: " + transacao.valor);
                 System.out.println("  De: " + transacao.contaOrigem.titular.nome);
                 System.out.println("  Para: " + transacao.contaDestino.titular.nome);
+                System.out.println();
             }
         }
     }
@@ -39,7 +43,8 @@ public class ContaCorrente {
     void sacar(double valor) {
         if (valor > this.saldo) {
             if (this.isEspecial) {
-                System.out.println("Saque autorizado. O valor sacado da conta de " + this.titular.nome + " é: " + valor);
+                System.out
+                        .println("Saque autorizado. O valor sacado da conta de " + this.titular.nome + " é: " + valor);
                 this.saldo -= valor;
                 Transacao transacao = new Transacao("Saque", valor, this, null);
                 extrato.add(transacao);
@@ -74,8 +79,9 @@ public class ContaCorrente {
                 System.out.println(this.titular.nome + ", Saldo insuficiente para realizar a transferência.");
             }
         } else {
-            System.out.println("Transferência OK! O valor transferido da conta de " + this.titular.nome + " para a conta de "
-                    + contaDestino.titular.nome + " é: " + valor);
+            System.out.println(
+                    "Transferência OK! O valor transferido da conta de " + this.titular.nome + " para a conta de "
+                            + contaDestino.titular.nome + " é: " + valor);
             this.saldo -= valor;
             contaDestino.saldo += valor;
             Transacao transacao = new Transacao("Transferência", valor, this, contaDestino);

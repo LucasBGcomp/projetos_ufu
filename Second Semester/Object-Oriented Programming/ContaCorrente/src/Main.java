@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Cliente cliente1 = new Cliente ("Lucas", "Rua A, 123");
-        Cliente cliente2 = new Cliente ("Maria", "Rua B, 456");
+        Cliente cliente1 = new Cliente("Lucas", "Rua A, 123");
+        Cliente cliente2 = new Cliente("Maria", "Rua B, 456");
         System.out.println();
         ContaCorrente conta1 = new ContaCorrente(cliente1, true);
         ContaCorrente conta2 = new ContaCorrente(cliente2, false);
