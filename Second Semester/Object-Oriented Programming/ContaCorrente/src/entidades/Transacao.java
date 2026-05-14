@@ -1,8 +1,10 @@
+package entidades;
+
 public class Transacao {
-    String tipo;
-    double valor;
-    ContaCorrente contaOrigem;
-    ContaCorrente contaDestino;
+    public String tipo;
+    public double valor;
+    public ContaCorrente contaOrigem;
+    public ContaCorrente contaDestino;
 
     public Transacao(String tipo, double valor, ContaCorrente contaOrigem, ContaCorrente contaDestino) {
         this.tipo = tipo;
