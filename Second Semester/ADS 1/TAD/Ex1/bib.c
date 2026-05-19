@@ -3,6 +3,27 @@
 #include <string.h>
 #include "bib.h"
 
+struct produto
+{
+    int codProd;
+    char nomeProd[15];
+    float preco;
+    int qtdeEstoque;
+};
+
+struct lista
+{
+    Produto *dados;
+    int qtd;
+    int capacidade;
+};
+
+void liberarLista(Lista *l)
+{
+    free(l->dados);
+    free(l);
+}
+
 void limparBuffer()
 {
     int c;
@@ -10,10 +31,42 @@ void limparBuffer()
         ;
 }
 
-void criarLista(Lista *l, int n)
+Lista* criarLista(int tam)
 {
-    l->dados = (Produto *) malloc(n * sizeof(Produto));
-    l->qtd = 0;
+    Lista *novaLista = (Lista *) malloc(sizeof(Lista));
+    novaLista->dados = (Produto *) malloc(tam * sizeof(Produto));
+    if (novaLista->dados == NULL)
+    {
+        free(novaLista);
+        return NULL;
+    }
+    novaLista->qtd = 0;
+    novaLista->capacidade = tam;
+    return novaLista;
+}
+
+Produto* criarProduto(){
+    Produto *novoProduto = (Produto *) malloc(sizeof(Produto));
+    if (novoProduto == NULL)
+        return NULL;
+    
+    int cod, qtde;
+    float preco;
+    char nome[15];
+    printf("Digite o código do produto: ");
+    scanf("%d", &cod);
+    printf("Digite o nome do produto: ");
+    scanf(" %14[^\n]", nome);
+    limparBuffer();
+    printf("Digite o preço do produto: ");
+    scanf("%f", &preco);
+    printf("Digite a quantidade em estoque: ");
+    scanf("%d", &qtde);
+    novoProduto->codProd = cod;
+    novoProduto->preco = preco;
+    novoProduto->qtdeEstoque = qtde;
+    strcpy(novoProduto->nomeProd, nome);
+    return novoProduto;
 }
 
 void exibirProdutos(Lista *l)
@@ -33,17 +86,30 @@ void exibirProdutos(Lista *l)
     }
 }
 
-void inserirProduto(Lista *l, Produto p)
+int inserirProduto(Lista *l, Produto *p)
 {
-    l->dados[l->qtd] = p;
-    l->qtd++;
-    printf("Produto inserido com sucesso!\n");
+    if (l->qtd < l->capacidade)
+    {
+        l->dados[l->qtd] = *p;
+        l->qtd++;
+        return 1; // Sucesso na inserção
+    }
+    else
+    {
+        return 0; // Falha na inserção, capacidade atingida
+    }
 }
 
-void maisCapacidade(Lista *l, int n)
+int maisCapacidade(Lista *l, int n)
 {
-    l->dados = (Produto *)realloc(l->dados, n * sizeof(Produto));
-    printf("Capacidade aumentada para %d produtos.\n", n);
+    Produto *temp;
+    temp = (Produto *)realloc(l->dados, n * sizeof(Produto));
+    if (temp == NULL)
+        return 0; // Falha na realocação
+
+    l->dados = temp;
+    l->capacidade = n;
+    return 1; // Sucesso na realocação
 }
 
 void menorPreco(Lista *l)
@@ -76,16 +142,16 @@ void venda_porCodigo(Lista *l, int qtdV, int codP)
             if (l->dados[i].qtdeEstoque >= qtdV)
             {
                 l->dados[i].qtdeEstoque -= qtdV;
-                printf("Venda realizada: %d unidades do produto %s\n", qtdV, l->dados[i].nomeProd);
+                printf("\nVenda realizada: %d unidades do produto %s\n", qtdV, l->dados[i].nomeProd);
             }
             else
             {
-                printf("Estoque insuficiente para realizar a venda!");
+                printf("\nEstoque insuficiente para realizar a venda!\n");
             }
             return;
         }
     }
-    printf("Produto com código %d não encontrado.\n", codP);
+    printf("\nProduto com código %d não encontrado.\n", codP);
 }
 
 void venda_porNome(Lista *l, int qtdV, char nomeP[15])
@@ -97,14 +163,14 @@ void venda_porNome(Lista *l, int qtdV, char nomeP[15])
             if (l->dados[i].qtdeEstoque >= qtdV)
             {
                 l->dados[i].qtdeEstoque -= qtdV;
-                printf("Venda realizada: %d unidades do produto %s\n", qtdV, l->dados[i].nomeProd);
+                printf("\nVenda realizada: %d unidades do produto %s\n", qtdV, l->dados[i].nomeProd);
             }
             else
             {
-                printf("Estoque insuficiente para realizar a venda!");
+                printf("\nEstoque insuficiente para realizar a venda!\n");
             }
             return;
         }
     }
-    printf("Produto não encontrado.\n");
+    printf("\nProduto não encontrado.\n");
 }

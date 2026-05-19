@@ -1,30 +1,25 @@
 #ifndef _BIB_H
 #define _BIB_H
-typedef struct
-{
-    int codProd;
-    char nomeProd[15];
-    float preco;
-    int qtdeEstoque;
-} Produto;
 
-typedef struct
-{
-    Produto *dados;
-    int qtd;
-} Lista;
+typedef struct produto Produto;
+
+typedef struct lista Lista;
+
+void liberarLista(Lista *l);
 
 void limparBuffer();
 
-void criarLista(Lista *l, int n); // Lista passada por referência e o número de produtos por valor
+Lista* criarLista(int n); // Número de produtos por valor
 
-void exibirProdutos(Lista *l); // Lista passada por referência
+Produto* criarProduto();
 
-void maisCapacidade(Lista *l, int n); // Lista passada por referência e o número de produtos por valor
+void exibirProdutos(Lista *l); // Lista passada por valor
 
-void inserirProduto(Lista *l, Produto p); // Lista passada por referência e o produto a ser inserido por valor
+int maisCapacidade(Lista *l, int n); // Lista passada por referência e o número de produtos por valor
 
-void menorPreco(Lista *l); // Lista passada por referência
+int inserirProduto(Lista *l, Produto *p); // Lista e produto passados por referência
+
+void menorPreco(Lista *l); // Lista passada por valor
 
 void venda_porCodigo(Lista *l, int qtdV, int codP); // Lista passada por referência, quantidade a ser vendida e código do produto por valor
 
