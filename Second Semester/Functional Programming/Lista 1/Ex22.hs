@@ -1,5 +1,5 @@
 intersectaParabolas :: (Double, Double, Double) -> (Double, Double, Double) -> [(Double, Double)]
-intersectaParabolas (a1, b1, c1) (a2, b2, c2) = if a1 == a2 && b1 == b2 && c1 == c2 then error "As parÃ¡bolas sÃ£o idÃªnticas, possuem infinitos pontos de interseÃ§Ã£o."
+intersectaParabolas (a1, b1, c1) (a2, b2, c2) = if a1 == a2 && b1 == b2 && c1 == c2 then error "As parábolas são idênticas, possuem infinitos pontos de interseção."
                                                 else if a1 == a2 then let x = (c2 - c1) / (b1 - b2)
                                                                       in [(x + 0, a1*x*x + b1*x + c1 + 0)]
                                                 else let

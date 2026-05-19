@@ -1,8 +1,8 @@
 eqRetaParabolas :: (Double, Double, Double) -> (Double, Double, Double) -> (Double, Double)
 eqRetaParabolas (a1, b1, c1) (a2, b2, c2)
-    | a1 == 0 || a2 == 0 = error "As fun√ß√µes devem ser par√°bolas (a1 e a2 n√£o podem ser zero)."
-    | a1 == a2 && b1 == b2 && c1 == c2 = error "As par√°bolas s√£o id√™nticas, n√£o h√° uma reta √∫nica que as intercepte."
-    | a1 == a2 = error "As par√°bolas s√£o paralelas, n√£o h√° uma reta √∫nica que as intercepte."
+    | a1 == 0 || a2 == 0 = error "As funÁıes devem ser par·bolas (a1 e a2 n„o podem ser zero)."
+    | a1 == a2 && b1 == b2 && c1 == c2 = error "As par·bolas s„o idÍnticas, n„o h· uma reta ˙nica que as intercepte."
+    | a1 == a2 = error "As par·bolas s„o paralelas, n„o h· uma reta ˙nica que as intercepte."
     | otherwise = let
                     a = a1 - a2
                     b = b1 - b2
@@ -15,5 +15,5 @@ eqRetaParabolas (a1, b1, c1) (a2, b2, c2)
                     m = (y2 - y1) / (x2 - x1)
                     n = y1 - m*x1
                   in if delta < 0
-                     then error "As par√°bolas n√£o se interceptam, n√£o h√° uma reta que as intercepte."
+                     then error "As par·bolas n„o se interceptam, n„o h· uma reta que as intercepte."
                      else (m, n)
