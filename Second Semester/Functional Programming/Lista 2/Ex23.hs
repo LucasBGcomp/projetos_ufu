@@ -3,6 +3,7 @@ tamSegmento (a1, b1, c1) (a2, b2, c2)
     | a1 == a2 && b1 == b2 && c1 == c2 = error "As parabolas sao identicas, possuem infinitos pontos de intersecao."
     | a1 == 0 || a2 == 0 = error "As funcoes devem ser parabolas (a1 e a2 nao podem ser zero)."
     | a1 == a2 = 0
+    | a1 == a2 && b1 == b2 = 0
     | otherwise = let
                     a = a1 - a2
                     b = b1 - b2
