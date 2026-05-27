@@ -41,20 +41,19 @@ int main() {
                 printf("\nDigite o nome do aluno a remover: ");
                 scanf(" %49[^\n]", nome);
                 limpar_buffer();
-                if (remover_aluno(lista, nome) == 0) {
-                    printf("\nAluno não encontrado.\n\n");
-                } else {
-                    printf("\nAluno removido com sucesso.\n\n");
-                }
+                lista = remover_aluno(lista, nome);
                 break;
             }
             case 4:
-                imprimir_lista(lista);
+                if (imprimir_lista(lista) == 0) {
+                    printf("\nNenhum aluno cadastrado.\n\n");
+                }
                 break;
             case 5: {
                 No* media70 = media_70(lista);
-                printf("\nAlunos com média >= 70:\n");
-                imprimir_lista(media70);
+                if (imprimir_lista(media70) == 0) {
+                    printf("\nNenhum aluno com média >= 70.\n\n");
+                }
                 liberar_lista(media70);
                 break;
             }

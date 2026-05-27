@@ -70,23 +70,34 @@ int pesquisar_notas(No* lista, char* nome) {
     return 0;
 }
 
-int remover_aluno(No* lista, char* nome) {
-    No* atual = lista;
-    No* ant = NULL;
-    while (atual != NULL) {
-        if (strcmp(atual->aluno.nome, nome) == 0) {
-            if (ant == NULL) {
+No* remover_aluno(No* lista, char* nome) {
+    No* atual, *ant;
+    int achou = 0;
+    if (lista == NULL) return lista;
+    else {
+        atual = lista;
+        ant = NULL;
+        while (atual != NULL) {
+            if (strcmp(atual->aluno.nome, nome) == 0) {
+                achou = 1;
+                break;
+            } else {
+                ant = atual;
+                atual = atual->prox;
+            }
+        }
+        if (achou == 1) {
+            if (atual == lista) {
                 lista = atual->prox;
             } else {
                 ant->prox = atual->prox;
             }
             free(atual);
-            return 1;
+        } else {
+            printf("\nAluno não encontrado.\n\n");
         }
-        atual = atual->prox;
-        ant = atual;
+        return lista;
     }
-    return 0;
 }
 
 No* media_70(No* lista) {
@@ -102,8 +113,11 @@ No* media_70(No* lista) {
     return lista_media;
 }
 
-void imprimir_lista(No* lista) {
+int imprimir_lista(No* lista) {
     No* atual = lista;
+    if (atual == NULL) {
+        return 0;
+    }
     while (atual != NULL) {
         printf("\nAluno: %s\n", atual->aluno.nome);
         printf("Nota Prática: %d\n", atual->aluno.nota_pratica);
@@ -111,6 +125,7 @@ void imprimir_lista(No* lista) {
         printf("---------------------------\n");
         atual = atual->prox;
     }
+    return 1;
 }
 
 void liberar_lista (No* lista) {
