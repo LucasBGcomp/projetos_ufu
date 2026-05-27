@@ -3,13 +3,15 @@
 #include <locale.h>
 #include "bib.h"
 
-int main() {
+int main()
+{
     setlocale(LC_ALL, "Portuguese_Brazil");
 
-    No* lista = criar_lista();
+    No *lista = criar_lista();
     int opcao;
 
-    do{
+    do
+    {
         printf("\n=============MENU=============\n");
         printf("\n1. Inserir aluno\n");
         printf("2. Pesquisar aluno\n");
@@ -19,47 +21,55 @@ int main() {
         printf("0. Sair\n\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
-        
-        switch (opcao) {
-            case 1: {
-                Aluno* a = criar_aluno();
-                lista = inserir_aluno(lista, a);
-                break;
+
+        switch (opcao)
+        {
+        case 1:
+        {
+            Aluno *a = criar_aluno();
+            lista = inserir_aluno(lista, a);
+            break;
+        }
+        case 2:
+        {
+            char nome[50];
+            printf("\nDigite o nome do aluno a pesquisar: ");
+            scanf(" %49[^\n]", nome);
+            limpar_buffer();
+            if (pesquisar_notas(lista, nome) == 0)
+            {
+                printf("\nAluno não encontrado.\n\n");
             }
-            case 2: {
-                char nome[50];
-                printf("\nDigite o nome do aluno a pesquisar: ");
-                scanf(" %49[^\n]", nome);
-                limpar_buffer();
-                if (pesquisar_notas(lista, nome) == 0) {
-                    printf("\nAluno não encontrado.\n\n");
-                }
-                break;
+            break;
+        }
+        case 3:
+        {
+            char nome[50];
+            printf("\nDigite o nome do aluno a remover: ");
+            scanf(" %49[^\n]", nome);
+            limpar_buffer();
+            lista = remover_aluno(lista, nome);
+            break;
+        }
+        case 4:
+            if (imprimir_lista(lista) == 0)
+            {
+                printf("\nNenhum aluno cadastrado.\n\n");
             }
-            case 3: {
-                char nome[50];
-                printf("\nDigite o nome do aluno a remover: ");
-                scanf(" %49[^\n]", nome);
-                limpar_buffer();
-                lista = remover_aluno(lista, nome);
-                break;
+            break;
+        case 5:
+        {
+            No *media70 = media_70(lista);
+            if (imprimir_lista(media70) == 0)
+            {
+                printf("\nNenhum aluno com média >= 70.\n\n");
             }
-            case 4:
-                if (imprimir_lista(lista) == 0) {
-                    printf("\nNenhum aluno cadastrado.\n\n");
-                }
-                break;
-            case 5: {
-                No* media70 = media_70(lista);
-                if (imprimir_lista(media70) == 0) {
-                    printf("\nNenhum aluno com média >= 70.\n\n");
-                }
-                liberar_lista(media70);
-                break;
-            }
-            case 0:
-                printf("Saindo...\n");
-                break;
+            liberar_lista(media70);
+            break;
+        }
+        case 0:
+            printf("Saindo...\n");
+            break;
         }
     } while (opcao != 0);
 
