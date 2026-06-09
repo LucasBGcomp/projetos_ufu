@@ -32,12 +32,12 @@ public class Aplicacao {
                 case 1:
                     sc.nextLine();
                     System.out.println("Digite o nome do cliente: ");
-                    String nome = sc.nextLine();
+                    nTitular1 = sc.nextLine();
                     System.out.println("Digite o endereco do cliente: ");
                     String endereco = sc.nextLine();
                     System.out.println("A conta e especial? (true/false): ");
                     boolean isEspecial = sc.nextBoolean();
-                    Cliente cliente = new Cliente(nome, endereco);
+                    Cliente cliente = new Cliente(nTitular1, endereco);
                     if (b.abrirConta(cliente, isEspecial)) {
                         System.out.println(
                                 "Conta aberta com sucesso para " + cliente.nome + ". Saldo inicial: R$ 1000.0");
