@@ -62,7 +62,11 @@ int adicionarNoFinal(Descritor *l, int valor)
     {
         novo->valor = valor;
         novo->prox = NULL;
-        if (l->fim != NULL)
+        if (l->inicio == NULL)
+        {
+            l->inicio = novo;
+        }
+        else
         {
             l->fim->prox = novo;
         }
@@ -79,6 +83,8 @@ int removerDoInicio(Descritor *l)
         return 0; // Lista vazia
     No *temp = l->inicio;
     l->inicio = l->inicio->prox;
+    if (l->inicio == NULL)
+        l->fim == NULL;
     free(temp);
     l->tamanho--;
     return 1; // Sucesso
@@ -126,6 +132,11 @@ int removerElemento(Descritor *l, int elemento)
         {
             l->inicio = atual->prox;
         }
+        else if (atual == l->fim)
+        {
+            l->fim = anterior;
+            anterior->prox = NULL;
+        }
         else
         {
             anterior->prox = atual->prox;
@@ -167,4 +178,11 @@ void liberarLista(Descritor *l)
         free(temp);
     }
     free(l);
+}
+
+void limparBuffer()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF)
+        ;
 }

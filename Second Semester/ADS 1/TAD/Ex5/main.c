@@ -8,6 +8,11 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
     Descritor *lista;
     inicializarLista(&lista);
+    if (lista == NULL)
+    {
+        printf("Erro ao criar lista!!");
+        return 1;
+    }
 
     int opcao;
 
@@ -23,6 +28,7 @@ int main()
         printf("0. Sair\n");
         printf("\nEscolha uma opção: ");
         scanf("%d", &opcao);
+        limparBuffer();
 
         switch (opcao)
         {
@@ -31,6 +37,7 @@ int main()
             int valor;
             printf("\nDigite o valor a ser adicionado: ");
             scanf("%d", &valor);
+            limparBuffer();
             if (adicionarNoInicio(lista, valor))
             {
                 printf("\nElemento adicionado com sucesso!\n");
@@ -46,6 +53,7 @@ int main()
             int valor;
             printf("\nDigite o valor a ser adicionado: ");
             scanf("%d", &valor);
+            limparBuffer();
             if (adicionarNoFinal(lista, valor))
             {
                 printf("\nElemento adicionado com sucesso!\n");
@@ -83,6 +91,7 @@ int main()
             int valor;
             printf("\nDigite o valor a ser removido: ");
             scanf("%d", &valor);
+            limparBuffer();
             if (removerElemento(lista, valor))
             {
                 printf("\nElemento removido com sucesso!\n");
@@ -107,6 +116,7 @@ int main()
     } while (opcao != 0);
 
     liberarLista(lista);
-    system("pause");
+    printf("\nPressione Enter para sair...");
+    getchar();
     return 0;
 }
