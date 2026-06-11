@@ -107,7 +107,6 @@ int main()
             break;
 
         case 0:
-            printf("\nSaindo do programa...\n");
             break;
 
         default:
