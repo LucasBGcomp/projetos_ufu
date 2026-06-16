@@ -3,10 +3,10 @@ package entidades;
 import java.util.Vector;
 
 public class ContaCorrente {
-    public Cliente titular;
-    public double saldo;
-    public boolean isEspecial;
-    public Vector<Transacao> extrato;
+    private Cliente titular;
+    private double saldo;
+    private boolean isEspecial;
+    private Vector<Transacao> extrato;
 
     public ContaCorrente(Cliente titular, boolean isEspecial) {
         this.titular = titular;
@@ -21,19 +21,19 @@ public class ContaCorrente {
 
     public void exibirExtrato() {
         for (Transacao transacao : extrato) {
-            if (transacao.tipo.equals("Saque")) {
+            if (transacao.getTipo().equals("Saque")) {
                 System.out.println("Saque:");
-                System.out.println("  Valor: " + transacao.valor);
+                System.out.println("  Valor: " + transacao.getValor());
                 System.out.println();
-            } else if (transacao.tipo.equals("Deposito")) {
+            } else if (transacao.getTipo().equals("Deposito")) {
                 System.out.println("Deposito:");
-                System.out.println("  Valor: " + transacao.valor);
+                System.out.println("  Valor: " + transacao.getValor());
                 System.out.println();
-            } else if (transacao.tipo.equals("Transferencia")) {
+            } else if (transacao.getTipo().equals("Transferencia")) {
                 System.out.println("Transferencia:");
-                System.out.println("  Valor: " + transacao.valor);
-                System.out.println("  De: " + transacao.contaOrigem.titular.nome);
-                System.out.println("  Para: " + transacao.contaDestino.titular.nome);
+                System.out.println("  Valor: " + transacao.getValor());
+                System.out.println("  De: " + transacao.getContaOrigem().titular.getNome());
+                System.out.println("  Para: " + transacao.getContaDestino().titular.getNome());
                 System.out.println();
             }
         }
@@ -44,6 +44,7 @@ public class ContaCorrente {
             if (this.isEspecial) {
                 this.saldo -= valor;
                 Transacao transacao = new Transacao("Saque", valor, this, null);
+                if (transacao == null) return false;
                 extrato.add(transacao);
                 return true;
             } else {
@@ -52,6 +53,7 @@ public class ContaCorrente {
         } else {
             this.saldo -= valor;
             Transacao transacao = new Transacao("Saque", valor, this, null);
+            if (transacao == null) return false;
             extrato.add(transacao);
             return true;
         }
@@ -60,6 +62,7 @@ public class ContaCorrente {
     public boolean depositar(double valor) {
         this.saldo += valor;
         Transacao transacao = new Transacao("Deposito", valor, null, this);
+        if (transacao == null) return false;
         extrato.add(transacao);
         return true;
     }
@@ -70,6 +73,7 @@ public class ContaCorrente {
                 this.saldo -= valor;
                 contaDestino.saldo += valor;
                 Transacao transacao = new Transacao("Transferencia", valor, this, contaDestino);
+                if (transacao == null) return false;
                 extrato.add(transacao);
                 return true;
             } else {
@@ -79,8 +83,21 @@ public class ContaCorrente {
             this.saldo -= valor;
             contaDestino.saldo += valor;
             Transacao transacao = new Transacao("Transferencia", valor, this, contaDestino);
+            if (transacao == null) return false;
             extrato.add(transacao);
             return true;
         }
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public boolean getTipo() {
+        return isEspecial;
     }
 }

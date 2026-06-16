@@ -3,12 +3,16 @@ package entidades;
 import java.util.Vector;
 
 public class Banco {
-    public String nome;
+    private String nome;
     public Vector<ContaCorrente> contas;
 
     public Banco(String nome) {
         this.nome = nome;
         this.contas = new Vector<ContaCorrente>();
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public boolean abrirConta(Cliente titular, boolean isEspecial) {

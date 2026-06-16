@@ -40,7 +40,7 @@ public class Aplicacao {
                     Cliente cliente = new Cliente(nTitular1, endereco);
                     if (b.abrirConta(cliente, isEspecial)) {
                         System.out.println(
-                                "Conta aberta com sucesso para " + cliente.nome + ". Saldo inicial: R$ 1000.0");
+                                "Conta aberta com sucesso para " + cliente.getNome() + ". Saldo inicial: R$ 1000.0");
                     } else {
                         System.out.println("Erro ao abrir a conta.");
                     }
@@ -51,8 +51,8 @@ public class Aplicacao {
                     nTitular1 = sc.nextLine();
                     contaEncontrada1 = false;
                     for (ContaCorrente conta : b.contas) {
-                        if (conta.titular.nome.equalsIgnoreCase(nTitular1)) {
-                            System.out.println("Saldo da conta de " + conta.titular.nome + ": ");
+                        if (conta.getTitular().getNome().equalsIgnoreCase(nTitular1)) {
+                            System.out.println("Saldo da conta de " + conta.getTitular().getNome() + ": ");
                             conta.exibirSaldo();
                             contaEncontrada1 = true;
                             break;
@@ -68,8 +68,8 @@ public class Aplicacao {
                     nTitular1 = sc.nextLine();
                     contaEncontrada1 = false;
                     for (ContaCorrente conta : b.contas) {
-                        if (conta.titular.nome.equalsIgnoreCase(nTitular1)) {
-                            System.out.println("Extrato da conta de " + conta.titular.nome + ":");
+                        if (conta.getTitular().getNome().equalsIgnoreCase(nTitular1)) {
+                            System.out.println("Extrato da conta de " + conta.getTitular().getNome() + ":");
                             System.out.println();
                             conta.exibirExtrato();
                             contaEncontrada1 = true;
@@ -88,14 +88,14 @@ public class Aplicacao {
                     System.out.println("Digite o valor a ser sacado: ");
                     valorTransacao = sc.nextDouble();
                     for (ContaCorrente conta : b.contas) {
-                        if (conta.titular.nome.equalsIgnoreCase(nTitular1)) {
+                        if (conta.getTitular().getNome().equalsIgnoreCase(nTitular1)) {
                             contaEncontrada1 = true;
                             if (conta.sacar(valorTransacao)) {
-                                System.out.println("Saque realizado. O valor sacado da conta de " + conta.titular.nome
+                                System.out.println("Saque realizado. O valor sacado da conta de " + conta.getTitular().getNome()
                                         + " e: R$ " + valorTransacao);
                             } else {
                                 System.out.println(
-                                        "Nao foi possivel realizar o saque. Verifique o saldo e tente novamente.");
+                                        "Nao foi possivel realizar o saque. Tente novamente.");
                             }
                             break;
                         }
@@ -112,11 +112,11 @@ public class Aplicacao {
                     System.out.println("Digite o valor a ser depositado: ");
                     valorTransacao = sc.nextDouble();
                     for (ContaCorrente conta : b.contas) {
-                        if (conta.titular.nome.equalsIgnoreCase(nTitular1)) {
+                        if (conta.getTitular().getNome().equalsIgnoreCase(nTitular1)) {
                             contaEncontrada1 = true;
                             if (conta.depositar(valorTransacao)) {
                                 System.out.println("Deposito realizado. O valor depositado na conta de "
-                                        + conta.titular.nome + " e: R$ " + valorTransacao);
+                                        + conta.getTitular().getNome() + " e: R$ " + valorTransacao);
                             } else {
                                 System.out.println("Nao foi possivel realizar o deposito. Tente novamente.");
                             }
@@ -138,18 +138,18 @@ public class Aplicacao {
                     contaEncontrada1 = false;
                     contaEncontrada2 = false;
                     for (ContaCorrente contaOrigem : b.contas) {
-                        if (contaOrigem.titular.nome.equalsIgnoreCase(nTitular1)) {
+                        if (contaOrigem.getTitular().getNome().equalsIgnoreCase(nTitular1)) {
                             contaEncontrada1 = true;
                             for (ContaCorrente contaDestino : b.contas) {
-                                if (contaDestino.titular.nome.equalsIgnoreCase(nTitular2)) {
+                                if (contaDestino.getTitular().getNome().equalsIgnoreCase(nTitular2)) {
                                     contaEncontrada2 = true;
                                     if (contaOrigem.transferir(valorTransacao, contaDestino)) {
                                         System.out.println("Transferencia realizada. O valor transferido da conta de "
-                                                + contaOrigem.titular.nome + " para a conta de "
-                                                + contaDestino.titular.nome + " e: R$ " + valorTransacao);
+                                                + contaOrigem.getTitular().getNome() + " para a conta de "
+                                                + contaDestino.getTitular().getNome() + " e: R$ " + valorTransacao);
                                     } else {
                                         System.out.println(
-                                                "Nao foi possivel realizar a transferencia. Verifique o saldo e tente novamente.");
+                                                "Nao foi possivel realizar a transferencia. Tente novamente.");
                                     }
                                     break;
                                 }
