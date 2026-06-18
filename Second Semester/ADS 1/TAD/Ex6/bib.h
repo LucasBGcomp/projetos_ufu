@@ -17,4 +17,4 @@ void liberarLista(Descritor *d);
 
 void limparBuffer();
 
-#endif 
+#endif
